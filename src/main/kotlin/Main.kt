@@ -1,7 +1,7 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+import net.dv8tion.jda.api.JDABuilder
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+fun main(args: Array<String>) {
+    var token : String = ""
+    val jda = JDABuilder.createDefault(token).build()
+    jda.addEventListener(MessageListener())
 }
