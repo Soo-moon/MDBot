@@ -28,6 +28,11 @@ class MessageListener : ListenerAdapter() {
 
                 channel.sendMessageEmbeds(eb.build()).queue()
             }
+            else if(args[0] == "?" || args[0] == "도움" || args[0] == "help"){
+                channel.sendMessage("명령어 리스트 ").queue()
+                channel.sendMessage("!경매, !ㄱㅁ  ==> 경매분배금 계산 기능(4인,8인)").queue()
+            }
+            else channel.sendMessage("명령어리스트는 !?, !도움, !help 을 입력하세요.").queue()
         }
     }
 }
