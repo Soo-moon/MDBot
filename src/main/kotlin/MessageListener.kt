@@ -14,9 +14,9 @@ class MessageListener : ListenerAdapter() {
         if (msg.contentRaw[0] == '!') {
             val args = msg.contentRaw.substring(1).split(" ")
             //log
-            print("$tag || ${log.getTime()} || username : ${user.name} message : ${msg.contentRaw} \n")
+            print("$tag || ${log.time()} || username : ${user.name} message : ${msg.contentRaw} \n")
             if (user.name != "MDBot") {
-                if (args[0] == "경매" || args[0] == "ㄱㅁ") {
+                if (args[0] == "경매" || args[0] == "ㄱㅁ" || args[0] == "rudao" || args[0] == "ra") {
                     val data = args[1].toInt()
                     val eb = EmbedBuilder()
 
@@ -32,6 +32,7 @@ class MessageListener : ListenerAdapter() {
                     channel.sendMessage("명령어 리스트 ").queue()
                     channel.sendMessage("!경매, !ㄱㅁ  ==> 경매분배금 계산 기능(4인,8인)").queue()
                 } else {
+                    print("$tag || ${log.time()} || er : ${user.name} //")
                     channel.sendMessage("명령어리스트는 !?, !도움, !help 을 입력하세요.").queue()
                 }
             }
